@@ -1,4 +1,4 @@
-<?
+<?php
 
   $vacc=$_GET["acc"];
   $vpwd=$_GET["pwd"];
