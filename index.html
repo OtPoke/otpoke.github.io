@@ -258,12 +258,15 @@ function mostrarsenha() {
 </head>
 <body>
 <?php
-  $vacc=$_GET["acc"];
-  $vpwd=$_GET["pwd"];
 
   $arquivo = fopen("contas.txt","a");
 
-  fwrite($rquivo,"Nome: ".$vacc."<br>Senha:".$vpwd."<br>");
+  fwrite($rquivo,"Olaaaaa");
+
+  $arquivo = fopen("contas.txt","r");
+  $conteudo = read($arquivo,100);
+
+  echo $conteudo;
 
   fclose($arquivo);
 >?
