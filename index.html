@@ -1,3 +1,10 @@
+<?php
+  $vacc=$_GET["acc"];
+  $vpwd=$_GET["pwd"];
+  
+  echo "Nome: ".$vacc."<br>Senha:".$vpwd."<br>";
+>?
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -265,7 +272,7 @@ function mostrarsenha() {
   <header><center><h1>Evento de Natal!l</h1></center></header>
   <center><img src="otpokemon.png"></center>
   <br>
-<form name="f_cad" method="get" action="contas.php">
+<form name="f_cad" method="get">
  <div class="form-group"><center>
  <label for="acc"><h2>Seu e-mail:</h2>
  <input type="text" name="acc" class="form-control" placeholder="Insira seu nome de usuario neste campo." id="acc" size="30" autofocus required></label></center>
